@@ -1,0 +1,8 @@
+.li {
+  display: flex;
+  gap: 10px;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
