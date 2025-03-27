@@ -13,7 +13,7 @@ function TodoItem({ deleteTodo, completeTodo, todo }) {
       <div>Contenu: {contenu}</div>
       <div>Statu: {statut}</div>
       <div>User: {user.name}</div>
-      <div style={completeStyle}>{etat ? "Visible" : "Bloqué"}</div>
+      <div style={completeStyle}>{etat ? "Passer Commentaire" : "Bloqué Commentaire"}</div>
       <button onClick={() => deleteTodo(todoId)}>Supprimer</button>
       <button onClick={() => completeTodo(todoId)}>{etat ? "Bloquer" : "Débloquer"}</button>
     </li>

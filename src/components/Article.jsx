@@ -297,12 +297,12 @@ function Article() {
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Bienvenu Dans Votre Tableau de Bord
         </h2>
-        <input type="text" placeholder="Titre" ref={titre} />
+        <input type="text" placeholder="Titre" ref={titre} /> 
         <input type="text" placeholder="Contenu" ref={contenu} />
         <select ref={statut}>
           <option value="public">Public</option>
           <option value="prive">Privé</option>
-        </select>
+        </select><br />
         <button type="submit">Ajouter</button>
       </form>
 

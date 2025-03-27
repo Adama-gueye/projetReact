@@ -2,18 +2,25 @@ import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const usernameRef = useRef();
+  const emailnameRef = useRef();
   const passwordRef = useRef();
   const navigate = useNavigate();
 
   async function handleLogin(e) {
     e.preventDefault();
 
+    const email = emailnameRef.current.value.trim();
+    const password = passwordRef.current.value.trim();
+    
+    if (!email || !password) {
+      setError("Merci de remplir tous les champs !");
+      return;
+    }
     const loginPayload = {
-      email: usernameRef.current.value,
+      email: emailnameRef.current.value,
       password: passwordRef.current.value,
     };
-
+    
     console.log(loginPayload);
 
     const response = await fetch("/api/login", {
@@ -38,7 +45,7 @@ function Login() {
       <div className="bg-white p-8 shadow-lg rounded-lg w-96">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Connexion</h2>
         <form onSubmit={handleLogin} className="space-y-4">
-          <input type="text" placeholder="Nom d'utilisateur" ref={usernameRef} className="w-full p-2 border rounded" />
+          <input type="text" placeholder="Login" ref={emailnameRef} className="w-full p-2 border rounded" />
           <input type="password" placeholder="Mot de passe" ref={passwordRef} className="w-full p-2 border rounded" />
           <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Se connecter</button>
         </form>
